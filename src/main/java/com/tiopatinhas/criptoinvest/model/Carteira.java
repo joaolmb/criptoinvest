@@ -1,10 +1,12 @@
 package com.tiopatinhas.criptoinvest.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
+@Entity @Data
 public class Carteira {
     @Id @GeneratedValue
     private Long id;

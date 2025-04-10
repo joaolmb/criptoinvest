@@ -21,7 +21,7 @@ public class CarteiraService {
         this.perfilRepository = perfilRepository;
     }
 
-    /*public Carteira criarOuRecuperarCarteira(Long perfilId) {
+    public Carteira criarOuRecuperarCarteira(Long perfilId) {
         return carteiraRepository.findByPerfilId(perfilId)
                 .orElseGet(() -> {
                     PerfilInvestimento perfil = perfilRepository.findById(perfilId)
@@ -30,7 +30,7 @@ public class CarteiraService {
                     novaCarteira.setPerfil(perfil);
                     return carteiraRepository.save(novaCarteira);
                 });
-    }*/
+    }
 
     public Optional<Carteira> buscarPorId(Long id) {
         return carteiraRepository.findById(id);
@@ -43,12 +43,12 @@ public class CarteiraService {
         carteiraRepository.deleteById(id);
     }
 
-    /*public Carteira atualizarCarteira(Long id, Carteira dadosAtualizados) {
+    public Carteira atualizarCarteira(Long id, Carteira dadosAtualizados) {
         Carteira existente = carteiraRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Carteira não encontrada"));
 
-        existente.setSaldoAtual(dadosAtualizados.getSaldoAtual());
+        existente.setSaldoTotal(dadosAtualizados.getSaldoTotal());
 
         return carteiraRepository.save(existente);
-    }*/
+    }
 }
